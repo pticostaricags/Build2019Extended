@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Build2019ExtendedCore.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Build2019Extended
+namespace Build2019ExtendedCore
 {
     public class Startup
     {
@@ -30,10 +34,17 @@ namespace Build2019Extended
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDefaultIdentity<IdentityUser>()
+                .AddDefaultUI(UIFramework.Bootstrap4)
+                .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddAuthentication().AddTwitter(options =>
             {
-                options.ConsumerKey = "14TidazWWg6jQ4nPXRAnw4Kw8 ";
-                options.ConsumerSecret = "nQiT8nPNZlziv4lVNoKmyflIydLES2Hmn0umprFISfPJXHruFZ ";
+                options.ConsumerKey = "14TidazWWg6jQ4nPXRAnw4Kw8";
+                options.ConsumerSecret = "nQiT8nPNZlziv4lVNoKmyflIydLES2Hmn0umprFISfPJXHruFZ";
                 options.SaveTokens = true;
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -45,6 +56,7 @@ namespace Build2019Extended
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
             else
             {
@@ -56,6 +68,8 @@ namespace Build2019Extended
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
