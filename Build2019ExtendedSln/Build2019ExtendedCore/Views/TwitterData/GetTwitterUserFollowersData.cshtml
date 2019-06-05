@@ -1,0 +1,34 @@
+﻿@model RetrieveTwitterUserFollowersData
+
+@{
+    ViewData["Title"] = "GetTwitterUserFollowersData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GetTwitterUserFollowersData</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@if (Model != null) {
+    foreach (var singleData in Model.Property1)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(p=> singleData.UserDetails.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(p=> singleData.CreatedAtIso)
+            </td>
+            <td>
+                @Html.DisplayFor(p => singleData.TweetText)
+            </td>
+        </tr>
+    }
+}
+    </tbody>
+</table>

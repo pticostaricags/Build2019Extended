@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28917.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Build2019ExtendedCore", "Build2019ExtendedCore\Build2019ExtendedCore.csproj", "{03E66EA5-E9E6-43A3-8816-FAD1FF7F9028}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Build2019ExtendedCore", "Build2019ExtendedCore\Build2019ExtendedCore.csproj", "{03E66EA5-E9E6-43A3-8816-FAD1FF7F9028}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ImportTwitterUserFollowersData", "ImportTwitterUserFollowersData\ImportTwitterUserFollowersData.deployproj", "{C0BC01ED-5608-4204-80D4-38E3CB460168}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{03E66EA5-E9E6-43A3-8816-FAD1FF7F9028}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03E66EA5-E9E6-43A3-8816-FAD1FF7F9028}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03E66EA5-E9E6-43A3-8816-FAD1FF7F9028}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0BC01ED-5608-4204-80D4-38E3CB460168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0BC01ED-5608-4204-80D4-38E3CB460168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0BC01ED-5608-4204-80D4-38E3CB460168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0BC01ED-5608-4204-80D4-38E3CB460168}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
