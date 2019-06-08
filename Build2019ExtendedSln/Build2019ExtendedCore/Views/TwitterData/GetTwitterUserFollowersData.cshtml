@@ -7,6 +7,17 @@
 
 <h1>GetTwitterUserFollowersData</h1>
 
+<div>
+    Current Time: @DateTime.UtcNow
+</div>
+<div>
+    @using (Html.BeginForm(actionName: "GetTwitterUserFollowersData", controllerName: "TwitterData", method: FormMethod.Post))
+    {
+        <input type="text" name="txtTwitterUserHandle" id="txtTwitterUserHandle" />
+        <input type="submit" value="Get Twitter Data" />
+    }
+</div>
+
 <table class="table">
     <thead>
         <tr>
@@ -14,21 +25,22 @@
         </tr>
     </thead>
     <tbody>
-@if (Model != null) {
-    foreach (var singleData in Model.Property1)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(p=> singleData.UserDetails.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(p=> singleData.CreatedAtIso)
-            </td>
-            <td>
-                @Html.DisplayFor(p => singleData.TweetText)
-            </td>
-        </tr>
-    }
-}
+        @if (Model != null)
+        {
+            foreach (var singleData in Model.Property1)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(p => singleData.UserDetails.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(p => singleData.CreatedAtIso)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(p => singleData.TweetText)
+                    </td>
+                </tr>
+            }
+        }
     </tbody>
 </table>

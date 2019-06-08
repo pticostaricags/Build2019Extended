@@ -5,9 +5,4 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    @using (Html.BeginForm(actionName:"GetTwitterUserFollowersData", controllerName:"TwitterData", method: FormMethod.Post))
-    {
-        <input type="text" name="txtTwitterUserHandle" id="txtTwitterUserHandle" />
-        <input type="submit" value="Get Twitter Data" />
-    }
 </div>

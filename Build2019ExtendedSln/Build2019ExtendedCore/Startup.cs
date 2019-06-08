@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Build2019ExtendedCore.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Build2019ExtendedCore.DataAccess.DbEntities;
 
 namespace Build2019ExtendedCore
 {
@@ -34,7 +35,9 @@ namespace Build2019ExtendedCore
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+            services.AddDbContext<MainContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("MainContextConnection")));
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -75,7 +78,7 @@ namespace Build2019ExtendedCore
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=TwitterData}/{action=GetTwitterUserFollowersData}/{id?}");
             });
         }
     }

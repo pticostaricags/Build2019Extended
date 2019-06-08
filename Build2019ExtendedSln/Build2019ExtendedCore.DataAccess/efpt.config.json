@@ -1,0 +1,1 @@
+﻿{"ContextClassName":"MainContext","DefaultDacpacSchema":null,"IdReplace":false,"IncludeConnectionString":true,"OutputPath":"DbEntities","ProjectRootNamespace":"Build2019ExtendedCore.DataAccess","SelectedToBeGenerated":0,"Tables":[{"HasPrimaryKey":true,"Name":"dbo.Tweet"}],"UseDatabaseNames":false,"UseFluentApiOnly":true,"UseHandleBars":false,"UseInflector":false}

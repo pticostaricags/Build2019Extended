@@ -8,6 +8,7 @@
 
 
   <ItemGroup>
+    <PackageReference Include="F23.StringSimilarity" Version="3.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
@@ -16,6 +17,11 @@
 
   <ItemGroup>
     <Folder Include="Controllers\APIs\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Build2019ExtendedCore.DataAccess\Build2019ExtendedCore.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
